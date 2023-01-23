@@ -9,7 +9,7 @@ export const generateSessionToken = (sessionName: string) => {
     const oHeader = {alg: 'HS256', typ: 'JWT'};
 
     const oPayload = {
-      app_key: process.env.SDK_KEY,
+      app_key: process.env.ZOOM_VIDEO_SDK_KEY,
       tpc: sessionName,
       role_type: 1,
       user_identity: '',
@@ -24,7 +24,7 @@ export const generateSessionToken = (sessionName: string) => {
       'HS256',
       sHeader,
       sPayload,
-      process.env.SDK_SECRET,
+      process.env.ZOOM_VIDEO_SDK_SECRET,
     );
 
     return signature;
