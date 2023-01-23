@@ -1,8 +1,15 @@
 package com.zoom;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+
+import us.zoom.sdk.ZoomVideoSDK;
+import us.zoom.sdk.ZoomVideoSDKShareHelper;
 
 public class MainActivity extends ReactActivity {
 
@@ -16,6 +23,24 @@ public class MainActivity extends ReactActivity {
   }
 
   /**
+   *  Users need to add below to their own project to use sharing.
+   */
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
+      Intent intent = new Intent(this, NotificationService.class);
+      ZoomVideoSDKShareHelper shareHelper = ZoomVideoSDK.getInstance().getShareHelper();
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        startForegroundService(intent);
+      } else {
+        startService(intent);
+      }
+      shareHelper.startShareScreen(data);
+    }
+  }
+
+  /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
    * you can specify the renderer you wish to use - the new renderer (Fabric) or the old renderer
    * (Paper).
@@ -24,12 +49,10 @@ public class MainActivity extends ReactActivity {
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new MainActivityDelegate(this, getMainComponentName());
   }
-
   public static class MainActivityDelegate extends ReactActivityDelegate {
     public MainActivityDelegate(ReactActivity activity, String mainComponentName) {
       super(activity, mainComponentName);
     }
-
     @Override
     protected ReactRootView createRootView() {
       ReactRootView reactRootView = new ReactRootView(getContext());
@@ -37,7 +60,6 @@ public class MainActivity extends ReactActivity {
       reactRootView.setIsFabric(BuildConfig.IS_NEW_ARCHITECTURE_ENABLED);
       return reactRootView;
     }
-
     @Override
     protected boolean isConcurrentRootEnabled() {
       // If you opted-in for the New Architecture, we enable Concurrent Root (i.e. React 18).
