@@ -1,6 +1,6 @@
 import {KJUR} from 'jsrsasign';
 
-export const generateSessionToken = sessionName => {
+export const generateSessionToken = (sessionName: string) => {
   try {
     // TODO: Make sure the expiration is not less than the study duration
     const iat = Math.round((new Date().getTime() - 30000) / 1000);
@@ -29,6 +29,7 @@ export const generateSessionToken = sessionName => {
 
     return signature;
   } catch (e) {
-    return null;
+    console.log(e);
+    return '';
   }
 };
