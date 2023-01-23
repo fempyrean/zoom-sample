@@ -35,8 +35,21 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>bluetoothDecription</string>
+	<key>NSCameraUsageDescription</key>
+	<string>cameraDesciption</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>microphoneDesciption</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>photoLibraryDescription</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>voip</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,17 +64,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  
-  <key>NSBluetoothPeripheralUsageDescription</key>
-  <string>bluetoothDecription</string>
-
-  <key>NSCameraUsageDescription</key>
-  <string>cameraDesciption</string>
-
-  <key>NSMicrophoneUsageDescription</key>
-  <string>microphoneDesciption</string>
-
-  <key>NSPhotoLibraryUsageDescription</key>
-  <string>photoLibraryDescription</string>
 </dict>
 </plist>
