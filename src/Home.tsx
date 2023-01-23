@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React, {useState, useEffect} from 'react';
 import {ActivityIndicator, View, Text, StyleSheet, Button} from 'react-native';
 import {
@@ -8,6 +9,7 @@ import {
   ShareStatus,
   ZoomView,
   ZoomVideoSdkUserType,
+  ZoomVideoSdkUser,
 } from '@zoom/react-native-videosdk';
 
 import {generateSessionToken} from './utils/session-token';
@@ -56,9 +58,10 @@ const Home = () => {
 
     const screenSharingListener = zoom.addListener(
       EventType.onUserShareStatusChanged,
-      ({status}) => {
+      async ({user, status}: {user: ZoomVideoSdkUser; status: ShareStatus}) => {
         setIsScreenSharing(status === ShareStatus.Start);
         console.log('Screen sharing status:', status);
+        console.log('User name:', user.userName);
       },
     );
 
@@ -72,18 +75,19 @@ const Home = () => {
 
   const sessionButtonPressed = async () => {
     if (inSession) {
-      leaveSession();
+      await leaveSession();
     } else {
-      joinSession();
+      await joinSession();
     }
   };
 
   const joinSession = async () => {
     setLoading(true);
 
-    const sessionName = 'sample_session';
+    const sessionName = 'sdk';
     const token = generateSessionToken(sessionName);
 
+    // @ts-ignore
     await zoom.joinSession({
       sessionName,
       token,
@@ -125,42 +129,34 @@ const Home = () => {
 
   const cloudRecordingButtonPressed = async () => {
     if (isCloudRecording) {
-      stopCloudRecording();
+      await stopCloudRecording();
     } else {
-      startCloudRecording();
+      await startCloudRecording();
     }
   };
 
-  const startCloudRecording = () => {
-    zoom.recordingHelper.startCloudRecording();
+  const startCloudRecording = async () => {
+    console.log(await zoom.recordingHelper.startCloudRecording());
   };
 
-  const stopCloudRecording = () => {
-    zoom.recordingHelper.stopCloudRecording();
+  const stopCloudRecording = async () => {
+    console.log(await zoom.recordingHelper.stopCloudRecording());
   };
 
   const screenSharingButtonPressed = async () => {
-    if (isScreenSharing) {
-      stopScreenSharing();
+    await zoom.shareHelper.lockShare(false);
+    const isOtherSharing = await zoom.shareHelper.isOtherSharing();
+    const isShareLocked = await zoom.shareHelper.isShareLocked();
+
+    if (isOtherSharing) {
+      console.log('Other is sharing');
+    } else if (isShareLocked) {
+      console.log('Share is locked by host');
+    } else if (isScreenSharing) {
+      await zoom.shareHelper.stopShare();
     } else {
-      startScreenSharing();
+      await zoom.shareHelper.shareScreen();
     }
-  };
-
-  const startScreenSharing = async () => {
-    const zoomHelper = await zoom.shareHelper;
-    const isOtherSharing = await zoomHelper.isOtherSharing();
-    const isShareLocked = await zoomHelper.isShareLocked();
-
-    if (isOtherSharing || isShareLocked) {
-      console.log('Cannot start screen sharing');
-    } else {
-      zoomHelper.shareScreen();
-    }
-  };
-
-  const stopScreenSharing = async () => {
-    await zoom.shareHelper.stopShare();
   };
 
   return (

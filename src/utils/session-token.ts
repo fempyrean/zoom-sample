@@ -1,6 +1,6 @@
 import {KJUR} from 'jsrsasign';
 
-export const generateSessionToken = sessionName => {
+export const generateSessionToken = (sessionName: string) => {
   try {
     // TODO: Make sure the expiration is not less than the study duration
     const iat = Math.round((new Date().getTime() - 30000) / 1000);
@@ -9,7 +9,7 @@ export const generateSessionToken = sessionName => {
     const oHeader = {alg: 'HS256', typ: 'JWT'};
 
     const oPayload = {
-      app_key: process.env.ZOOM_VIDEO_SDK_KEY,
+      app_key: process.env.SDK_KEY,
       tpc: sessionName,
       role_type: 1,
       user_identity: '',
@@ -24,11 +24,12 @@ export const generateSessionToken = sessionName => {
       'HS256',
       sHeader,
       sPayload,
-      process.env.ZOOM_VIDEO_SDK_SECRET,
+      process.env.SDK_SECRET,
     );
 
     return signature;
   } catch (e) {
-    return null;
+    console.log(e);
+    return '';
   }
 };
