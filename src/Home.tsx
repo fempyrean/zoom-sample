@@ -84,7 +84,10 @@ const Home = () => {
   const joinSession = async () => {
     setLoading(true);
 
-    const sessionName = 'sdk';
+    const timestamp = Math.round(
+      (new Date().getTime() - Math.round(Math.random() * 100000)) / 1000,
+    );
+    const sessionName = `sdk-${timestamp}`;
     const token = generateSessionToken(sessionName);
 
     // @ts-ignore
@@ -185,7 +188,7 @@ const Home = () => {
       <Button
         title={isScreenSharing ? 'Stop screen sharing' : 'Start screen sharing'}
         onPress={screenSharingButtonPressed}
-        disabled={!inSession}
+        disabled={!isCloudRecording}
       />
 
       <ActivityIndicator style={styles.loading} animating={loading} />
