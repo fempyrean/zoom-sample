@@ -14,12 +14,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-zoom-zoomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-zoom-zoomTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C4F25E4A296746020064E735 /* ZoomVideoSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E49296746020064E735 /* ZoomVideoSDK.xcframework */; };
-		C4F25E4B296746020064E735 /* ZoomVideoSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E49296746020064E735 /* ZoomVideoSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4B6C9DA29ACD33C00288736 /* ZoomVideoSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E49296746020064E735 /* ZoomVideoSDK.xcframework */; };
+		C4B6C9DB29ACD33C00288736 /* ZoomVideoSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E49296746020064E735 /* ZoomVideoSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4B6C9DD29ACD34400288736 /* ZoomVideoSDKScreenShare.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E5F296757AB0064E735 /* ZoomVideoSDKScreenShare.xcframework */; };
 		C4F25E53296757200064E735 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E52296757200064E735 /* ReplayKit.framework */; };
 		C4F25E56296757200064E735 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F25E55296757200064E735 /* SampleHandler.swift */; };
 		C4F25E5A296757200064E735 /* ScreenShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C4F25E51296757200064E735 /* ScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C4F25E60296757AB0064E735 /* ZoomVideoSDKScreenShare.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E5F296757AB0064E735 /* ZoomVideoSDKScreenShare.xcframework */; };
 		C4F25E64296757C90064E735 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E63296757C90064E735 /* CoreGraphics.framework */; };
 		C4F25E66296757D00064E735 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E65296757D00064E735 /* CoreVideo.framework */; };
 		C4F25E68296757D60064E735 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F25E67296757D60064E735 /* CoreMedia.framework */; };
@@ -44,13 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C4F25E4C296746030064E735 /* Embed Frameworks */ = {
+		C4B6C9DC29ACD33C00288736 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C4F25E4B296746020064E735 /* ZoomVideoSDK.xcframework in Embed Frameworks */,
+				C4B6C9DB29ACD33C00288736 /* ZoomVideoSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,7 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-zoom.a in Frameworks */,
-				C4F25E4A296746020064E735 /* ZoomVideoSDK.xcframework in Frameworks */,
+				C4B6C9DA29ACD33C00288736 /* ZoomVideoSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 				C4F25E64296757C90064E735 /* CoreGraphics.framework in Frameworks */,
 				C4F25E53296757200064E735 /* ReplayKit.framework in Frameworks */,
 				C4F25E6A296757DD0064E735 /* VideoToolbox.framework in Frameworks */,
-				C4F25E60296757AB0064E735 /* ZoomVideoSDKScreenShare.xcframework in Frameworks */,
+				C4B6C9DD29ACD34400288736 /* ZoomVideoSDKScreenShare.xcframework in Frameworks */,
 				C4F25E66296757D00064E735 /* CoreVideo.framework in Frameworks */,
 				C4F25E68296757D60064E735 /* CoreMedia.framework in Frameworks */,
 			);
@@ -274,8 +274,8 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
-				C4F25E4C296746030064E735 /* Embed Frameworks */,
 				C4F25E5B296757200064E735 /* Embed Foundation Extensions */,
+				C4B6C9DC29ACD33C00288736 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
