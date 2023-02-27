@@ -1626,10 +1626,10 @@
     "@typescript-eslint/types" "5.48.0"
     eslint-visitor-keys "^3.3.0"
 
-"@zoom/react-native-videosdk@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@zoom/react-native-videosdk/-/react-native-videosdk-1.5.3.tgz#b0f6a124a62bd55a84f59c4242529f4fcd487666"
-  integrity sha512-B5X1Maq5z975xmyAxbUoeXx5rv3kSpKN5bcx65tUzDwOz6rDjs9cBri3T1UAXblQ55nVKZSO0i5z6dCNYF34Sg==
+"@zoom/react-native-videosdk@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@zoom/react-native-videosdk/-/react-native-videosdk-1.6.2.tgz#6667e84cc8b859494f7638ece5a2bdca0aff708e"
+  integrity sha512-3l+MP2LlvB3ZooBoqNT9VLS90gwatYP6vXla3pAYOir/Fxqrz0qjdKxVtsAeJph6agZ144Tvtb1F7q4yQ53roQ==
   dependencies:
     assert "^2.0.0"
     yarn "^1.22.18"

@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@zoom/react-native-videosdk": "^1.5.3",
+    "@zoom/react-native-videosdk": "^1.6.2",
     "jsrsasign": "^10.6.1",
     "react": "18.1.0",
     "react-native": "0.70.6",
