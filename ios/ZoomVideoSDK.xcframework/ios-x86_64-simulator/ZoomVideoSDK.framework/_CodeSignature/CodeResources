@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/ZoomVideoSDK.h</key>
 		<data>
-		+bkgMGBXTQcv95GpFDIITr/c+UQ=
+		LMvNBwalz4f2KRMvCPoAh+zjpv4=
 		</data>
 		<key>Headers/ZoomVideoSDKAudioHelper.h</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Headers/ZoomVideoSDKConstants.h</key>
 		<data>
-		+/x7fD3ino96uABf+d7E2QJvIkc=
+		nUBDVHU/6j75VckPZqSUMDeZd6k=
 		</data>
 		<key>Headers/ZoomVideoSDKDelegate.h</key>
 		<data>
-		SnZANLiOF8rgFWe3Qidb4E4DuTY=
+		RjL3PzhpaTDq9CxTxgNNe9VQYnw=
 		</data>
 		<key>Headers/ZoomVideoSDKLiveStreamHelper.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/ZoomVideoSDKLiveTranscriptionHelper.h</key>
 		<data>
-		ygn52zjO/qEjXI+uTGFjie8U/7g=
+		AkGz1j0yJ6MQA5D9CQH0Z0UpPlg=
 		</data>
 		<key>Headers/ZoomVideoSDKNetworkConnectionHelper.h</key>
 		<data>
@@ -66,11 +66,15 @@
 		</data>
 		<key>Headers/ZoomVideoSDKRecordingHelper.h</key>
 		<data>
-		yotKpe1fvIBUEBI01L3DVZdPrM8=
+		sW707SPUEW7CZvA3669JNk+9axg=
 		</data>
 		<key>Headers/ZoomVideoSDKShareHelper.h</key>
 		<data>
-		GIzlGIvLxfZ+EQnklPNM2YWzuMc=
+		4UMJnHZUmwiY3GHTl/2Ejfb/MdU=
+		</data>
+		<key>Headers/ZoomVideoSDKShareSender.h</key>
+		<data>
+		MICTww7OVNVIwDSqQ05t35gTGb8=
 		</data>
 		<key>Headers/ZoomVideoSDKTestAudioDeviceHelper.h</key>
 		<data>
@@ -78,7 +82,7 @@
 		</data>
 		<key>Headers/ZoomVideoSDKUser.h</key>
 		<data>
-		QjTU3iJaEbm2qaXyPpu0A/dw0UE=
+		axnpLGB63YT5NH+opTt9Kc9q54A=
 		</data>
 		<key>Headers/ZoomVideoSDKUserHelper.h</key>
 		<data>
@@ -94,7 +98,7 @@
 		</data>
 		<key>Headers/ZoomVideoSDKVideoHelper.h</key>
 		<data>
-		Nngf288p3af7msaebe0QP8hY3pA=
+		IvII5v7HmFTcfaTWpMVzmr5D+4o=
 		</data>
 		<key>Headers/ZoomVideoSDKVideoRawData.h</key>
 		<data>
@@ -104,13 +108,21 @@
 		<data>
 		BWEz7YSk5LbKvLYCNQyxDjzjgIo=
 		</data>
+		<key>Headers/ZoomVideoSDKVirtualBackgroundHelper.h</key>
+		<data>
+		DCaTrvmIYQyQGbDZui6PBZxrjlg=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		zS/R1u84qXAkUXTqc/7EXF6G/5E=
+		f8a5V6AiGSpmNExQrG2CbDOSKrI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		5jmilyOCdCU9+lFDQw4Unvav/SU=
+		</data>
+		<key>nydusDefault.metallib</key>
+		<data>
+		frhTLGgLGVbEfDo4WLreA5kJCpY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -119,11 +131,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+bkgMGBXTQcv95GpFDIITr/c+UQ=
+			LMvNBwalz4f2KRMvCPoAh+zjpv4=
 			</data>
 			<key>hash2</key>
 			<data>
-			zxVCmmEah6F1oGcuqYwlRX/I8zo2HZe3j3CLlIsYBVc=
+			kAPL4XFbT0f38ajdnZwCTGoWvcJNZOSDjv9Hra7239g=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKAudioHelper.h</key>
@@ -196,22 +208,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+/x7fD3ino96uABf+d7E2QJvIkc=
+			nUBDVHU/6j75VckPZqSUMDeZd6k=
 			</data>
 			<key>hash2</key>
 			<data>
-			2vhERtrKw3mj+zKRNPGGCODLKHvndVC1KX39ppyfSqQ=
+			eij9NIAYCodG+0j1aWrRfv3Rmqrzdohr1uqR9cFBuJo=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SnZANLiOF8rgFWe3Qidb4E4DuTY=
+			RjL3PzhpaTDq9CxTxgNNe9VQYnw=
 			</data>
 			<key>hash2</key>
 			<data>
-			PG2OWjWPiqcV9kg0XfYtWvjf08SPah55pA77p9uqbN8=
+			29f9fi4Vn98v99wuI1tSuKXbvhpGRYFOf5Ux1SNEiJE=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKLiveStreamHelper.h</key>
@@ -229,11 +241,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ygn52zjO/qEjXI+uTGFjie8U/7g=
+			AkGz1j0yJ6MQA5D9CQH0Z0UpPlg=
 			</data>
 			<key>hash2</key>
 			<data>
-			X0QyvWlPMFWsRpL44mnjUGDBB71N7tSwPBpZ2msxzIQ=
+			4KN8LPCK5E2m/EN4nNpSZnOCHATT4NRe+fgmjdVZlzM=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKNetworkConnectionHelper.h</key>
@@ -284,22 +296,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yotKpe1fvIBUEBI01L3DVZdPrM8=
+			sW707SPUEW7CZvA3669JNk+9axg=
 			</data>
 			<key>hash2</key>
 			<data>
-			KuMyswOE/BPAuz6jQVg2XIHILIdAZqfdrBj7OdpFQ/4=
+			UKxLONNx5Xi4BsdEj/OKvaK6ZpExXew4XVa5nJOiQ3c=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKShareHelper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GIzlGIvLxfZ+EQnklPNM2YWzuMc=
+			4UMJnHZUmwiY3GHTl/2Ejfb/MdU=
 			</data>
 			<key>hash2</key>
 			<data>
-			7MKfl70m96aZxRnDmu6tQBzQ5th3yc1Wn/aFeWCx2F0=
+			7s8Ibp7rTMSTSJI5jOmFeU6Rm0fA8yVNoNSVHzZCuGs=
+			</data>
+		</dict>
+		<key>Headers/ZoomVideoSDKShareSender.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MICTww7OVNVIwDSqQ05t35gTGb8=
+			</data>
+			<key>hash2</key>
+			<data>
+			BdrncmpuBRZRrtfGxaoLO6vYUbr2uN+0TNdO4707jnQ=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKTestAudioDeviceHelper.h</key>
@@ -317,11 +340,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QjTU3iJaEbm2qaXyPpu0A/dw0UE=
+			axnpLGB63YT5NH+opTt9Kc9q54A=
 			</data>
 			<key>hash2</key>
 			<data>
-			pjyHtWiRO6XCqF1HCwa1NZKDTEhy6DMHqMxx4WLv2kQ=
+			sTk9bYpXtYihdYuzVAAKy5C6NOwUQbHoKGb+mAN/mok=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKUserHelper.h</key>
@@ -361,11 +384,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Nngf288p3af7msaebe0QP8hY3pA=
+			IvII5v7HmFTcfaTWpMVzmr5D+4o=
 			</data>
 			<key>hash2</key>
 			<data>
-			2ogmMeVUq9IOx2VubCYN0XymVUdbAnZw9Nb55gpYMsE=
+			DLf4xP3lgYlzdvs5xs9gEP90ePOlOTAEC+qH1bhX5oI=
 			</data>
 		</dict>
 		<key>Headers/ZoomVideoSDKVideoRawData.h</key>
@@ -390,6 +413,17 @@
 			6k/LoLTRFpEBIe8JrcLIMg8SE0ZVZPUNCPVKApiM2Zw=
 			</data>
 		</dict>
+		<key>Headers/ZoomVideoSDKVirtualBackgroundHelper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DCaTrvmIYQyQGbDZui6PBZxrjlg=
+			</data>
+			<key>hash2</key>
+			<data>
+			/9dGPa2+mNIckqnNny8shEwAEESgbky2zciFA2nPJgs=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
@@ -399,6 +433,17 @@
 			<key>hash2</key>
 			<data>
 			q+06mn7KeIa+uKGZtSHlMOHMWuvkHcZChf4ExhUuKQs=
+			</data>
+		</dict>
+		<key>nydusDefault.metallib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			frhTLGgLGVbEfDo4WLreA5kJCpY=
+			</data>
+			<key>hash2</key>
+			<data>
+			NA2wxIo2s3eSDu1DEi9R0B5YIil9QojjyB2fKnGXDv0=
 			</data>
 		</dict>
 	</dict>

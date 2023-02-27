@@ -107,6 +107,10 @@
  */
 - (BOOL)isManager;
 /*!
+ @brief are user agreed with the individual record.
+ */
+- (BOOL)isIndividualRecordAgreed;
+/*!
  @brief Get the user's video status.
  @warning This interface be marked as deprecated, then it will be instead by ZoomVideoSDKRawDataPipe.videoStatus() and ZoomVideoSDKVideoCanvas.videoStatus()
  */
@@ -161,7 +165,7 @@
  @param isSharingAudio if true, sets the volume of shared audio, otherwise sets the volume of the microphone.
  @return if success return YES, otherwise NO.
  */
-- (BOOL)setUserVolume:(float)volume isShareAudio:(BOOL)isShareAudio;
+- (BOOL)setUserVolume:(float)volume isShareAudio:(BOOL)isSharingAudio;
 
 /*!
  @brief Get user volume.
@@ -169,13 +173,13 @@
  @param isSharingAudio if true, gets the volume of shared audio, otherwise gets the volume of the microphone.
  @return if success return YES, otherwise NO.
  */
-- (BOOL)getUserVolume:(float*)volume isShareAudio:(BOOL)isShareAudio;
+- (BOOL)getUserVolume:(float * _Nullable)volume isShareAudio:(BOOL)isSharingAudio;
 
 /*!
  @brief Determine which audio you can set, shared audio or microphone
  @param isSharingAudio if true, checks whether you can set the volume of shared audio, otherwise you can set the volume of the microphone.
  @return if success return YES, otherwise NO.
  */
-- (BOOL)canSetUserVolume:(BOOL)isShareAudio;
+- (BOOL)canSetUserVolume:(BOOL)isSharingAudio;
 
 @end

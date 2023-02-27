@@ -74,7 +74,15 @@
  @param view The view which draws the preview video.
  @return ZoomVideoSDKError error code.
  */
-- (ZoomVideoSDKError)startVideoCanvasPreview:(UIView * _Nullable)view;
+- (ZoomVideoSDKError)startVideoCanvasPreview:(UIView * _Nullable)view DEPRECATED_MSG_ATTRIBUTE("Please use - (ZoomVideoSDKError)startVideoCanvasPreview:andAspectMode: instead");
+
+/*!
+ @brief Subscribe preview with a canvas view.
+ @param view The view which draws the preview video.
+ @param aspect The acpect mode of the preview.
+ @return ZoomVideoSDKError error code.
+ */
+- (ZoomVideoSDKError)startVideoCanvasPreview:(UIView * _Nullable)view andAspectMode:(ZoomVideoSDKVideoAspect)aspect;
 
 /*!
  @brief UnSubscribe preview with a canvas view.
@@ -104,6 +112,21 @@
 - (BOOL)rotateMyVideo:(UIDeviceOrientation)rotation;
 
 /*!
+ @brief Call this method to mirror my video.
+ @param enable YES will mirror the video, NO will reset the mirror effect back.
+ @return the result of it.
+ @warning this function only for canvas.
+ */
+- (ZoomVideoSDKError)mirrorMyVideo:(BOOL)enable;
+
+/*!
+ @brief Call this method get mirror effect enabled or not.
+ @return Returns YES if the mirror effect enabled, NO otherwise.
+ @warning this function only for canvas.
+ */
+- (BOOL)isMirrorMyVideoEnabled;
+
+/*!
  @brief Switch to the next available camera.
  */
 - (void)switchCamera;
@@ -114,5 +137,19 @@
  @return If the function succeeds, it will return Errors_Success.
  */
 -(ZoomVideoSDKError)setVideoQualityPreference:(ZoomVideoSDKVideoPreferenceSetting * _Nullable)preferenceSetting;
+
+/**
+ @brief Determine whether current aspect ratio is the original aspect ratio of video.
+ @return YES if is original aspect ratio, otherwise NO.
+ */
+- (BOOL)isOriginalAspectRatioEnabled;
+
+/**
+ @brief This function is used to set the aspect ratio of the video sent out.
+ @param enabled false means the aspect ratio is 16:9, true means that using the original aspect ratio of video
+ @return YES if is original aspect ratio, otherwise NO.
+ @warning If session is using video source and data_mode is not VideoSourceDataMode_None, default always use original aspect ration of video.
+ */
+- (BOOL)enableOriginalAspectRatio:(BOOL)enabled;
 
 @end

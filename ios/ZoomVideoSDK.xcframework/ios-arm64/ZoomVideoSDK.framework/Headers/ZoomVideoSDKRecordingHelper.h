@@ -8,6 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+
+/*!
+ @brief Class for recording agreement action.
+ */
+@interface ZoomVideoSDKRecordAgreementHandler : NSObject
+/*!
+ @brief get the recording agreement type.
+ */
+@property (assign, nonatomic, readonly) ZoomVideoSDKRecordAgreementType agreementType;
+/*!
+ @brief accept the indivdual record or traditional record.
+ */
+- (BOOL)accept;
+/*!
+ @brief decline the individual record or traditional record. For individual record, will not record that person, for traditional record, will leave the meeting.
+ */
+- (BOOL)decline;
+
+@end
+
 /*!
  @brief Class for using cloud recording in the session.
  See[ZoomVideoSDK.h#getRecordingHelper]

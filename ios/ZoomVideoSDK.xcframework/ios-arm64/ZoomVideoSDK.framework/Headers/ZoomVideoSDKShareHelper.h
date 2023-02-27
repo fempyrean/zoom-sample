@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol ZoomVideoSDKShareSource;
 /*!
  @class ZoomVideoSDKShareStatus
  @brief Share status of user
@@ -33,6 +34,13 @@
  @return If the function succeeds, the return value is Errors_Success. Otherwise failed. To get extended error information, see [ZoomVideoSDKError].
  */
 - (ZoomVideoSDKError)startShareWithView:(UIView * _Nullable)view;
+
+/*!
+ @brief Share an external source.
+ @param pSource External share source,To get extended error information, see {@link ZMVideoSDKShareSource}.
+ @return If the function succeeds, it will return Errors_Success.Otherwise failed. To get extended error information, see [ZoomVideoSDKError].
+ */
+- (ZoomVideoSDKError)startSharingExternalSource:(id<ZoomVideoSDKShareSource>)pSource;
 
 /*!
  @brief Stop view or screen share.

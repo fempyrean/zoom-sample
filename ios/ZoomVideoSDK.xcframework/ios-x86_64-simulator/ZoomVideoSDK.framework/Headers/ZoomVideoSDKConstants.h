@@ -247,7 +247,8 @@ typedef NS_ENUM(NSUInteger, ZoomVideoSDKRecordingStatus) {
     ZoomVideoSDKRecordingStatus_Start,///The recording has successfully started or successfully resumed.
     ZoomVideoSDKRecordingStatus_Stop,///The recording has stopped.
     ZoomVideoSDKRecordingStatus_DiskFull,///Recording is unsuccessful due to insufficient storage space..Please try to:1.Free up storage space  2.Purchase additional storage space
-    ZoomVideoSDKRecordingStatus_Pause,///The recording has paused.
+    ZoomVideoSDKRecordingStatus_Pause, ///The recording has paused.
+    ZoomVideoSDKRecordingStatus_Connecting, ///The recording connecting.
 };
 
 typedef NS_ENUM(NSUInteger, ZoomVideoSDKVideoPreferenceMode) {
@@ -274,6 +275,7 @@ typedef NS_ENUM(NSUInteger, ZoomVideoSDKLiveTranscriptionOperationType) {
     ZoomVideoSDKLiveTranscriptionOperationType_Delete,  /// operation  delete
     ZoomVideoSDKLiveTranscriptionOperationType_Complete,/// operation  complete
     ZoomVideoSDKLiveTranscriptionOperationType_NotSupported,/// operation  not support
+    ZoomVideoSDKLiveTranscriptionOperationType_NoTranslation, ///operation  no  translation
 };
 
 typedef NS_ENUM(NSUInteger, ZoomVideoSDKSystemPermissionType) {
@@ -309,6 +311,26 @@ typedef NS_ENUM(NSUInteger, ZoomVideoSDKNetworkStatus)
     ZoomVideoSDKNetworkStatus_Bad,
     ZoomVideoSDKNetworkStatus_Normal,
     ZoomVideoSDKNetworkStatus_Good,
+};
+
+/**
+ * @brief Type of record agreement type.
+ */
+typedef NS_ENUM(NSUInteger, ZoomVideoSDKRecordAgreementType)
+{
+    ZoomVideoSDKRecordAgreementType_Invalid,
+    ZoomVideoSDKRecordAgreementType_Traditional,
+    ZoomVideoSDKRecordAgreementType_Individual_Only,
+};
+
+/**
+ * @brief Enumerations of the type for virtual background.
+ */
+typedef NS_ENUM(NSUInteger, ZoomVideoSDKVirtualBackgroundDataType)
+{
+    ZoomVideoSDKVirtualBackgroundDataType_None,
+    ZoomVideoSDKVirtualBackgroundDataType_Image,
+    ZoomVideoSDKVirtualBackgroundDataType_Blur,
 };
 
 #endif /* ZoomVideoSDKConstants_h */

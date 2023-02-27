@@ -10,11 +10,13 @@
 #import "ZoomVideoSDKChatHelper.h"
 #import "ZoomVideoSDKPreProcessRawData.h"
 #import "ZoomVideoSDKVideoSender.h"
+#import "ZoomVideoSDKShareSender.h"
 #import "ZoomVideoSDKAudioSender.h"
 #import "ZoomVideoSDKVideoCapability.h"
 #import "ZoomVideoSDKVideoHelper.h"
 #import "ZoomVideoSDKAudioHelper.h"
 #import "ZoomVideoSDKShareHelper.h"
+#import "ZoomVideoSDKRecordingHelper.h"
 #import "ZoomVideoSDKLiveStreamHelper.h"
 #import "ZoomVideoSDKUserHelper.h"
 #import "ZoomVideoSDKLiveTranscriptionHelper.h"
@@ -62,8 +64,8 @@
 - (void)onUserLeave:(ZoomVideoSDKUserHelper * _Nullable)helper users:(NSArray <ZoomVideoSDKUser *>* _Nullable)userArray;
 
 /*!
- @brief Callback: Invoked when a user makes changes to their video, such as starting or stopping their video.
- @param helperVideo Video helper utility.
+ @brief Invoked when a user makes changes to their video, such as starting or stopping their video.
+ @param helper Video helper utility.
  @param userArray List of users who have just left the session.
  */
 - (void)onUserVideoStatusChanged:(ZoomVideoSDKVideoHelper * _Nullable)helper user:(NSArray <ZoomVideoSDKUser *>* _Nullable)userArray;
@@ -180,11 +182,23 @@
 - (void)onCommandReceived:(NSString * _Nullable)commandContent sendUser:(ZoomVideoSDKUser * _Nullable)sendUser;
 
 /**
- @brief Callback: Invoked when cloud recording status has paused, stopped, resumed, or otherwise changed.
+ @brief Callback: Invoked when cloud recording status has started, paused, stopped, resumed, or otherwise changed.
  @param status  Cloud recording status defined in [ZoomVideoSDKRecordingStatus].
  */
-- (void)onCloudRecordingStatus:(ZoomVideoSDKRecordingStatus)status;
+- (void)onCloudRecordingStatus:(ZoomVideoSDKRecordingStatus)status DEPRECATED_MSG_ATTRIBUTE("use - (void)onCloudRecordingStatus:recordAgreementHandler: instead");
 
+/**
+ @brief Callback: Invoked when cloud recording status has started, paused, stopped, resumed, or otherwise changed.
+ @param status  Cloud recording status defined in [ZoomVideoSDKRecordingStatus].
+ @param handler  could handle the action user Accept or Decline;
+ */
+- (void)onCloudRecordingStatus:(ZoomVideoSDKRecordingStatus)status recordAgreementHandler:(ZoomVideoSDKRecordAgreementHandler * _Nullable)handler;
+
+/**
+ @brief Callback: user agreement status change.
+ @param user  the user which agree the record.
+ */
+- (void)onUserRecordAgreementNotification:(ZoomVideoSDKUser * _Nullable)user;
 /**
  @brief Callback: Invoked when a host requests you to unmute yourself.
  */
@@ -225,6 +239,12 @@
  @param type The live transcription operation type. See [ZoomVideoSDKLiveTranscriptionOperationType].
  */
 - (void)onLiveTranscriptionMsgReceived:(NSString *)ltMsg user:(ZoomVideoSDKUser *)user type:(ZoomVideoSDKLiveTranscriptionOperationType)type;
+
+/**
+ @brief Callback: when a live transcription message is received.
+ @param messageInfo The live transcription message 
+ */
+- (void)onLiveTranscriptionMsgReceived:(ZoomVideoSDKLiveTranscriptionMessageInfo *)messageInfo;
 
 /**
  @brief Callback: Invoked when a live translation error occurs.
@@ -392,5 +412,25 @@
  @brief Callback sent when the microphone is uninitialized. For example, if the user left the session.
  */
 - (void)onMicUninitialized;
+
+@end
+
+#pragma mark - ZoomVideoSDKShareSource
+/*!
+ @brief Custom external share source interface.
+ */
+@protocol ZoomVideoSDKShareSource <NSObject>
+
+@optional
+/*!
+ @brief Callback for share source can start send raw data.
+ @param sender See [ZoomVideoSDKShareSender].
+ */
+- (void)onShareSendStarted:(ZoomVideoSDKShareSender *_Nullable)rawDataSender;
+
+/*!
+ @brief Callback for share source stop send raw data.
+ */
+- (void)onShareSendStopped;
 
 @end

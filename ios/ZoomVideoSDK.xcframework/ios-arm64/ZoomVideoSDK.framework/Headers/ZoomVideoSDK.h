@@ -23,6 +23,7 @@
 #import "ZoomVideoSDKTestAudioDeviceHelper.h"
 #import "ZoomVideoSDKLiveTranscriptionHelper.h"
 #import "ZoomVideoSDKNetworkConnectionHelper.h"
+#import "ZoomVideoSDKVirtualBackgroundHelper.h"
 
 /*!
  @class ZoomVideoSDKExtendParams
@@ -460,5 +461,11 @@
  @return A [ZoomVideoSDKLiveTranscriptionHelper] instance.
  */
 - (ZoomVideoSDKLiveTranscriptionHelper * _Nonnull)getLiveTranscriptionHelper;
+
+/*!
+ @brief Get virtual background helper object.
+ @return A [ZoomVideoSDKLiveTranscriptionHelper] instance.
+ */
+- (ZoomVideoSDKVirtualBackgroundHelper * _Nonnull)getVirtualBackgroundHelper;
 
 @end

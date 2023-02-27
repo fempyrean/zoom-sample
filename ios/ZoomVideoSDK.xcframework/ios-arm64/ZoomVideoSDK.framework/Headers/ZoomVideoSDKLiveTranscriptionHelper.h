@@ -21,6 +21,37 @@
 
 @end
 
+
+
+@interface ZoomVideoSDKLiveTranscriptionMessageInfo : NSObject
+/*!
+@brief message id of transcription message
+*/
+@property (nonatomic, copy)NSString *messageID;
+/*!
+@brief speaker id of transcription message
+*/
+@property (nonatomic, copy)NSString *speakerID;
+/*!
+@brief speak name  of transcription message
+*/
+@property (nonatomic, copy)NSString *speakerName;
+/*!
+@brief message content  of transcription message
+*/
+@property (nonatomic, copy)NSString *messageContent;
+/*!
+@brief time stamp  of transcription message
+*/
+@property (nonatomic, assign)NSInteger timeStamp;
+/*!
+@brief message tpye  of transcription message
+*/
+@property (nonatomic, assign)ZoomVideoSDKLiveTranscriptionOperationType messageType;
+
+@end
+
+
 @interface ZoomVideoSDKLiveTranscriptionHelper : NSObject
 
 /*!
@@ -62,6 +93,32 @@
 @return If the function succeeds, return the current spoken language.
 */
 - (ZoomVideoSDKLiveTranscriptionLanguage *)getSpokenLanguage;
+
+/*!
+@brief Enable or disable to receive original and translated content. If you enable this feature, you must start live transcription.
+@return If the function succeeds, the return value is ZoomVideoSDKError.
+*/
+
+- (ZoomVideoSDKError)enableReceiveSpokenLanguageContent:(BOOL)enable;
+
+/*!
+@brief Determine whether the view history translation message is available.
+@return True indicates that the view history transcription message is available. Otherwise False.
+*/
+- (BOOL)isAllowViewFullTranscriptEnable;
+
+/*!
+@brief Get the list of all history translation messages in a session.
+@return If the function succeeds, the return value is a list of all history translation messages in a session.
+*/
+- (NSArray <ZoomVideoSDKLiveTranscriptionMessageInfo *> *)getHistoryTranslationMessageList;
+
+/*!
+@brief Determine whether the feature to receive original and translated is available.
+@return True indicates that the feature to receive original and translated is available. Otherwise False.
+*/
+
+- (BOOL)isReceiveSpokenLanguageContentEnabled;
 
 /*!
 @brief Get the list of all available translation languages in a session.
